@@ -119,6 +119,7 @@ def init(args):
             helpers.images.get(args)
         if not os.path.isdir(tools.config.defaults["rootfs"]):
             os.mkdir(tools.config.defaults["rootfs"])
+        helpers.drivers.probeAshmemDriver(args)
         helpers.lxc.setup_host_perms(args)
         helpers.lxc.set_lxc_config(args)
         helpers.lxc.make_base_props(args)
